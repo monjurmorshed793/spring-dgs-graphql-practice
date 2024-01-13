@@ -15,14 +15,14 @@ public class Designation implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String title;
 
     public Designation() {
     }
 
-    public Designation(String title) {
+    public Designation(UUID id, String title) {
+        this.id = id;
         this.title = title;
     }
 

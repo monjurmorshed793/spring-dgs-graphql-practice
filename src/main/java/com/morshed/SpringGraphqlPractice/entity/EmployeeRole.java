@@ -14,14 +14,14 @@ public class EmployeeRole implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String title;
 
     public EmployeeRole() {
     }
 
-    public EmployeeRole(String title) {
+    public EmployeeRole(UUID id, String title) {
+        this.id = id;
         this.title = title;
     }
 
