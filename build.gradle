@@ -2,13 +2,14 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.1'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id 'com.netflix.dgs.codegen' version '5.12.4'
 }
 
 group = 'com.morshed'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '21'
+	sourceCompatibility = '17' // java 21 not yet supported
 }
 
 configurations {
@@ -39,4 +40,10 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+
+generateJava{
+	packageName = 'com.morshed.dgs.generated' // The package name to use to generate sources
+	generateClient = true
 }
