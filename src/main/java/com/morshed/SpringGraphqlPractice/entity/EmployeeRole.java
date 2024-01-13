@@ -10,8 +10,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-public class Designation implements Serializable {
-
+public class EmployeeRole implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -19,10 +18,10 @@ public class Designation implements Serializable {
     private UUID id;
     private String title;
 
-    public Designation() {
+    public EmployeeRole() {
     }
 
-    public Designation(String title) {
+    public EmployeeRole(String title) {
         this.title = title;
     }
 
@@ -46,7 +45,7 @@ public class Designation implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Designation that = (Designation) o;
+        EmployeeRole that = (EmployeeRole) o;
         return Objects.equals(id, that.id);
     }
 
