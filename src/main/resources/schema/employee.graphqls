@@ -1,0 +1,20 @@
+type Employee{
+    id: ID!,
+    name: String!,
+    email: String!,
+    mobileNumber: String!,
+    designation: Designation!,
+    roles: [EmployeeRole!]!
+}
+
+extend type Query{
+    employees: [Employee!]!
+    employee(id: ID!): Employee!
+}
+
+
+extend type Mutation{
+    createEmployee(name: String!, email: String!, mobileNumber: String!, designationId: ID!, roleIds: [ID!]!): Employee!
+    updateEmployee(id: ID!, name: String!, email: String!, mobileNumber: String!, designationId: ID!, roleIds: [ID!]!): Employee!
+    deleteEmployee(id: ID!): Employee!
+}

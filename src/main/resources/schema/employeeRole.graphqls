@@ -1,0 +1,15 @@
+type EmployeeRole{
+    id: ID!,
+    title: String!
+}
+
+extend type Query{
+    employeeRoles: [EmployeeRole!]!
+    employeeRole(id: ID!): EmployeeRole!
+}
+
+extend type Mutation{
+    createEmployeeRole(title: String!): EmployeeRole!
+    updateEmployeeRole(id: ID!, title: String!): EmployeeRole!
+    deleteEmployeeRole(id: ID!): EmployeeRole!
+}

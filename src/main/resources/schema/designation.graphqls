@@ -1,0 +1,15 @@
+type Designation{
+    id: ID!,
+    title: String!
+}
+
+type Query{
+    designations: [Designation!]!
+    designation(id: ID!): Designation!
+}
+
+type Mutation{
+    createDesignation(title: String!): Designation!
+    updateDesignation(id: ID!, title: String!): Designation!
+    deleteDesignation(id: ID!): Designation!
+}
