@@ -1,0 +1,42 @@
+type Designation{
+    id: ID!,
+    title: String!
+}
+
+type EmployeeRole{
+    id: ID!,
+    title: String!
+}
+
+type Employee{
+    id: ID!,
+    name: String!,
+    email: String!,
+    mobileNumber: String!,
+    designation: Designation!,
+    roles: [EmployeeRole!]!
+}
+
+type Query{
+    designations: [Designation!]!
+    designation(id: ID!): Designation!
+    employeeRoles: [EmployeeRole!]!
+    employeeRole(id: ID!): EmployeeRole!
+    employees: [Employee!]!
+    employee(id: ID!): Employee!
+}
+
+
+type Mutation{
+    createDesignation(title: String!): Designation!
+    updateDesignation(id: ID!, title: String!): Designation!
+    deleteDesignation(id: ID!): Designation!
+
+    createEmployeeRole(title: String!): EmployeeRole!
+    updateEmployeeRole(id: ID!, title: String!): EmployeeRole!
+    deleteEmployeeRole(id: ID!): EmployeeRole!
+
+    createEmployee(name: String!, email: String!, mobileNumber: String!, designationId: ID!, roleIds: [ID!]!): Employee!
+    updateEmployee(id: ID!, name: String!, email: String!, mobileNumber: String!, designationId: ID!, roleIds: [ID!]!): Employee!
+    deleteEmployee(id: ID!): Employee!
+}
